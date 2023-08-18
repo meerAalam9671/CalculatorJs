@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calulator made by me</title>
+    <style>
+        .container{
+           display: flex;
+           flex-direction: column;
+           text-align: center;
+           border: 1px solid black;
+           background-color: blueviolet;
+           width: 246px;
+           margin: auto;
+           padding: 15px;
+        }
+        .container h1{
+            font-size: 24px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .row{
+            justify-content: center;
+        }
+        input{
+            display: block;
+            margin: auto;
+            width: 173px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 15px;
+            background-color: #cfc8c8
+
+        }
+        button{
+            height: 28px;
+            width: 37px;
+            margin-top: 5px;
+            font-size: 20px;
+        }
+        .oprator{
+            width: 55px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CALCULATOR SAMPLE</h1>
+        <input type="text">
+        <div class="row">
+            <button>C</button>
+            <button>M-</button>
+            <button>M+</button>
+            <button class="oprator">%</button>
+        </div>
+        <div class="row">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="oprator">/</button>
+        </div>
+        <div class="row">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="oprator">*</button>
+        </div>
+        <div class="row">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="oprator">-</button>
+        </div>
+        <div class="row">
+            <button>.</button>
+            <button>0</button>
+            <button>=</button>
+            <button class="oprator">+</button>
+        </div>
+    </div> 
+    <p id="demo"></p>                        
+    <script> 
+        let string="";
+        let button = document.querySelectorAll('button');
+        Array.from(button).forEach((button)=>{
+          button.addEventListener('click',(e)=>{
+          if(e.target.innerHTML=='='){
+            string=eval(string);
+            document.querySelector('input').value = string;
+          }
+          else if(e.target.innerHTML=='C'){
+            string=" ";
+            document.querySelector('input').value = string;
+          }
+          else{
+          console.log(e.target)
+          string = string + e.target.innerHTML;
+          document.querySelector('input').value = string;
+          }
+          })
+        })
+            
+        // var x = "Hello ";
+        // var y = "Meer Aalam ";
+        // var z = x + y +"there are two friends!";
+        // var z = "meer " + "Aalam"; 
+        // alert(z);
+        // x = 1;
+        // console.log('x =' + x)
+        // var x = 1;
+        let name = 'Meer Aalam';
+        let distric = 'Amethi';
+         
+             var Intro = alert('My name is ' + name + '  I am from ' + distric);
+             function myfunction(){
+                 document.getElementById('demo').innerHTML = Intro;
+             }
+             document.write(myfunction);
+
+        
+        
+    </script>
+    
+</body>
+</html>
